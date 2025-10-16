@@ -9,6 +9,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup as BS
 import time
+from time import strftime, localtime
 import os
 from snownlp import SnowNLP
 
@@ -31,7 +32,7 @@ def get_bilibili_danmu(v_url,v_result_file):
     danmu_url_list=[]
     time_list=[]
     text_list=[]
-    for i in danmu_list:
+    for d in danmu_list:
         data_split=d['p'].split(',')
         temp_time=time.localtime(int(data_split[4]))
         danmu_time=strftime("%Y-%m-%d %H:%M:%S",temp_time)
@@ -59,8 +60,9 @@ if os.path.exists(csv_file):
     print('{}Deleted file'.format(csv_file))
 bv_list=['BV1Z4411P7KN','BV1tg4y1z7Xb','BV1DE411h75g']
 for bv in bv_list:
-    get_bilibili_danmu(v_url='https://api.bilibili.com/x/player/pagelist?bvid={}'.format(bv),v_result_file='B站弹幕.csv')
+    get_bilibili_danmu(v_url='https://api.bilibili.com/x/player/pagelist?bvid={}'.format(bv),v_result_file='Bilibili bullet.csv')
 print('The web crawler has completed its execution.')
+
 
 
 
