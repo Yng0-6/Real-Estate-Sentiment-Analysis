@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug  5 14:01:13 2024
-
-@author: lenovo
-"""
 import re
 import requests
 import pandas as pd
@@ -62,6 +56,7 @@ bv_list=['BV1Z4411P7KN','BV1tg4y1z7Xb','BV1DE411h75g']
 for bv in bv_list:
     get_bilibili_danmu(v_url='https://api.bilibili.com/x/player/pagelist?bvid={}'.format(bv),v_result_file='Bilibili bullet.csv')
 print('The web crawler has completed its execution.')
+
 
 
 
