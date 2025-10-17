@@ -47,7 +47,7 @@ def get_bilibili_danmu(v_url,v_result_file):
     df.to_csv(v_result_file,encoding='utf_8_sig',mode='a+',index=False,header=header)
     
 print('The crawler program has begun execution!')
-csv_file='Bilibili bullet.csv'
+csv_file='Bilibili_bullet.csv'
 if os.path.exists(csv_file):
     print('The file{}already exists, Starting to delete the file.'.format(csv_file))
     os.remove(csv_file)
@@ -56,6 +56,7 @@ bv_list=['BV1Z4411P7KN','BV1tg4y1z7Xb','BV1DE411h75g']
 for bv in bv_list:
     get_bilibili_danmu(v_url='https://api.bilibili.com/x/player/pagelist?bvid={}'.format(bv),v_result_file='Bilibili bullet.csv')
 print('The web crawler has completed its execution.')
+
 
 
 
